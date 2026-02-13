@@ -1,7 +1,7 @@
 export default {
   components: {
-    example: {
-      title: "Example",
+    footer: {
+      createdWith: "Created with",
     },
   },
 };
