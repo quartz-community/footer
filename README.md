@@ -10,14 +10,25 @@ npx quartz plugin add github:quartz-community/footer
 
 ## Usage
 
-```ts
-// quartz.layout.ts
-import * as Plugin from "./.quartz/plugins";
+```yaml title="quartz.config.yaml"
+plugins:
+  - source: github:quartz-community/footer
+    enabled: true
+    options:
+      links:
+        GitHub: https://github.com/jackyzha0/quartz
+        Discord Community: https://discord.gg/cRFFHYye7t
+```
 
-// Add to your layout
-Plugin.Footer({
+For advanced use cases, you can override in TypeScript:
+
+```ts title="quartz.ts (override)"
+import * as ExternalPlugin from "./.quartz/plugins";
+
+ExternalPlugin.Footer({
   links: {
-    GitHub: "https://github.com/quartz-community",
+    GitHub: "https://github.com/jackyzha0/quartz",
+    "Discord Community": "https://discord.gg/cRFFHYye7t",
   },
 });
 ```
@@ -30,7 +41,7 @@ Plugin.Footer({
 
 ## Documentation
 
-See the [Quartz documentation](https://quartz.jzhao.xyz/) for more information.
+See the [Quartz documentation](https://quartz.jzhao.xyz/plugins/Footer) for more information.
 
 ## License
 
