@@ -22,12 +22,9 @@ export default defineConfig({
       name: "text-loader",
       setup(build) {
         build.onLoad({ filter: /\.scss$/ }, async (args) => {
-          const fs = await import("fs");
-          const text = await fs.promises.readFile(args.path, "utf8");
-          return {
-            contents: text,
-            loader: "text",
-          };
+          const sass = await import("sass");
+          const result = sass.compile(args.path);
+          return { contents: result.css, loader: "text" };
         });
 
         build.onLoad({ filter: /\.inline\.ts$/ }, async (args) => {
