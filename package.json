@@ -103,7 +103,16 @@
     },
     "optionSchema": {
       "links": {
-        "type": "object"
+        "type": "object",
+        "description": "A map of link labels to their URLs to display in the footer"
+      },
+      "target": {
+        "type": "string",
+        "description": "HTML target attribute applied to every footer link, e.g. '_blank' to open links in a new tab"
+      },
+      "rel": {
+        "type": "string",
+        "description": "HTML rel attribute applied to every footer link, e.g. 'noopener noreferrer' when using target=\"_blank\""
       }
     }
   },

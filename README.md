@@ -20,6 +20,20 @@ plugins:
         Discord Community: https://discord.gg/cRFFHYye7t
 ```
 
+To open every footer link (including the Quartz attribution) in a new tab:
+
+```yaml title="quartz.config.yaml"
+plugins:
+  - source: github:quartz-community/footer
+    enabled: true
+    options:
+      links:
+        GitHub: https://github.com/jackyzha0/quartz
+        Discord Community: https://discord.gg/cRFFHYye7t
+      target: "_blank"
+      rel: "noopener noreferrer"
+```
+
 For advanced use cases, you can override in TypeScript:
 
 ```ts title="quartz.ts (override)"
@@ -30,14 +44,18 @@ ExternalPlugin.Footer({
     GitHub: "https://github.com/jackyzha0/quartz",
     "Discord Community": "https://discord.gg/cRFFHYye7t",
   },
+  target: "_blank",
+  rel: "noopener noreferrer",
 });
 ```
 
 ## Configuration
 
-| Option  | Type                     | Default | Description                                                  |
-| ------- | ------------------------ | ------- | ------------------------------------------------------------ |
-| `links` | `Record<string, string>` | `{}`    | A map of link labels to their URLs to display in the footer. |
+| Option   | Type                     | Default     | Description                                                                                        |
+| -------- | ------------------------ | ----------- | -------------------------------------------------------------------------------------------------- |
+| `links`  | `Record<string, string>` | `{}`        | A map of link labels to their URLs to display in the footer.                                       |
+| `target` | `string`                 | `undefined` | `target` attribute applied to every footer link, e.g. `"_blank"` to open links in a new tab.       |
+| `rel`    | `string`                 | `undefined` | `rel` attribute applied to every footer link, e.g. `"noopener noreferrer"` with `target="_blank"`. |
 
 ## Layout
 
