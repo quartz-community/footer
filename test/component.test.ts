@@ -23,4 +23,16 @@ describe("Footer component", () => {
     const Footer = mod.default
     expect(() => Footer({ links: { GitHub: "https://github.com" } })).not.toThrow()
   })
+
+  it("accepts target and rel options without crashing", async () => {
+    const mod = await import("../src/components/Footer")
+    const Footer = mod.default
+    expect(() =>
+      Footer({
+        links: { GitHub: "https://github.com" },
+        target: "_blank",
+        rel: "noopener noreferrer",
+      }),
+    ).not.toThrow()
+  })
 })
