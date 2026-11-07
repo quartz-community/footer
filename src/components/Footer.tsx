@@ -19,6 +19,11 @@ function getQuartzVersion(): string {
 
 export interface FooterOptions {
   links: Record<string, string>;
+  /**
+   * Extra text shown in the footer, below the "Created with Quartz" line. HTML is allowed
+   * (e.g. `'Licensed under <a href="/license">CC BY 4.0</a>'`).
+   */
+  message?: string;
 }
 
 export default ((opts?: FooterOptions) => {
@@ -34,6 +39,9 @@ export default ((opts?: FooterOptions) => {
           <a href="https://quartz.jzhao.xyz/">Quartz{version ? ` v${version}` : ""}</a> &copy;{" "}
           {year}
         </p>
+        {opts?.message ? (
+          <p class="footer-message" dangerouslySetInnerHTML={{ __html: opts.message }} />
+        ) : null}
         <ul>
           {Object.entries(links).map(([text, link]) => (
             <li>

@@ -104,6 +104,9 @@
     "optionSchema": {
       "links": {
         "type": "object"
+      },
+      "message": {
+        "type": "string"
       }
     }
   },
