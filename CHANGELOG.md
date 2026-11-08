@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0
+
+### Minor Changes
+
+- 646c386: Add a `message` option: extra text (HTML allowed) shown below the "Created with Quartz" line, for licence notices, contact details and the like.
+
 ## 1.0.0
 
 ### Major Changes
