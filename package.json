@@ -1,6 +1,6 @@
 {
   "name": "@quartz-community/footer",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Footer component for Quartz - displays site footer with links and version",
   "type": "module",
   "license": "MIT",
