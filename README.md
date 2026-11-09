@@ -5,39 +5,30 @@ Renders a footer with a "Created with Quartz" message and configurable links.
 ## Installation
 
 ```bash
-npx quartz plugin add github:quartz-community/footer
+npx quartz plugin add @quartz-community/footer
 ```
 
 ## Usage
 
+This plugin is already enabled in the default `quartz.config.yaml`:
+
 ```yaml title="quartz.config.yaml"
 plugins:
-  - source: github:quartz-community/footer
+  - source: "@quartz-community/footer"
     enabled: true
     options:
       links:
         GitHub: https://github.com/jackyzha0/quartz
         Discord Community: https://discord.gg/cRFFHYye7t
-```
-
-For advanced use cases, you can override in TypeScript:
-
-```ts title="quartz.ts (override)"
-import * as ExternalPlugin from "./.quartz/plugins";
-
-ExternalPlugin.Footer({
-  links: {
-    GitHub: "https://github.com/jackyzha0/quartz",
-    "Discord Community": "https://discord.gg/cRFFHYye7t",
-  },
-});
+      message: 'Licensed under <a href="/license">CC BY 4.0</a>'
 ```
 
 ## Configuration
 
-| Option  | Type                     | Default | Description                                                  |
-| ------- | ------------------------ | ------- | ------------------------------------------------------------ |
-| `links` | `Record<string, string>` | `{}`    | A map of link labels to their URLs to display in the footer. |
+| Option    | Type                     | Default                         | Description                                                                                    |
+| --------- | ------------------------ | ------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `links`   | `Record<string, string>` | Quartz GitHub and Discord links | A map of link labels to their URLs to display in the footer. Set `links: {}` for none.         |
+| `message` | `string`                 | not set                         | Extra text shown below the "Created with Quartz" line, e.g. a license notice. HTML is allowed. |
 
 ## Layout
 
