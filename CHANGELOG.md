@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.2
+
+### Patch Changes
+
+- 2e0da28: The footer is at 85% opacity instead of 70%, the lowest that keeps its text and links at 4.5:1 contrast (WCAG AA) in light and dark mode.
+
 ## 1.1.1
 
 ### Patch Changes
